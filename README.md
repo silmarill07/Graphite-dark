@@ -46,7 +46,7 @@
 ```text
 ~/.config/syncthing/ (~/.local/state/syncthing/ або /usr/share/syncthing/)
 └── gui/
-    └── Graphite-dark/
+    └── graphite-dark/
        └── assets/
            └── css/
                └── theme.css
@@ -56,7 +56,7 @@
 
 - Перезапустіть сервіс Syncthing, щоб він побачив нову папку.
 
-> Для користувацького сервісу:bash
+> Для користувацького сервісу
 
 ```bash
 systemctl --user restart syncthing
