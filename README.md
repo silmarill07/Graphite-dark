@@ -4,7 +4,7 @@
 
 ## 📸 Скріншот інтерфейсу
 
-![Screenshot 1](./graphite-dark/assets/img/1.png)
+![Screenshot 1](./graphite-dark/assets/img/3.png)
 ![Screenshot 2](./graphite-dark/assets/img/2.png)
 
 ## 🛠 Встановлення
