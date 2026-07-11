@@ -4,7 +4,7 @@
   --ef-bg1: #212326;      /* Колір карток та панелей */
   --ef-bg2: #1b1c1e;      /* Навбар */
   --ef-bg3: #2a2d32;      /* Поля введення та рядки, що чергуються */
-  --ef-bg4: #32363c;      /* Чіткі сірі межі для розділення елементів */
+  --ef-bg4: #32363c;      /* Чіткі сірі% межі для розділення елементів */
   --ef-bg5: #212326;      /* Випадаючі меню */
 
   --ef-fg: #ffffff;        /* Чистий білий для важливих назв */
@@ -93,25 +93,49 @@ h1, h2, h3, h4 {
   color: var(--ef-fg-muted) !important;
 }
 
-/* ---------- Таблиці ---------- */
+/* ---------- Таблиці (Списки статусів) ---------- */
 .table {
   background: transparent !important;
   color: var(--ef-fg-muted) !important;
   margin-bottom: 0 !important;
 }
-.table > tbody > tr > td {
+/* Центруємо вміст усіх комірок (і th, і td) по вертикалі */
+.table > tbody > tr > td,
+.table > tbody > tr > th,
+.table > thead > tr > th {
   border-top: 1px solid var(--ef-bg4) !important;
   padding: 8px 12px !important;
+  vertical-align: middle !important;
 }
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: var(--ef-bg3) !important;
 }
 /* Права колонка зі значеннями — робимо яскравішою */
 .table > tbody > tr > td:last-child,
+.table > tbody > tr > th:last-child,
 td span, td code, .text-monospace, .text-right {
   color: var(--ef-fg) !important;
   background-color: transparent !important;
   border: none !important;
+}
+
+/* Точний фікс для лівої колонки з назвами (th) */
+.table > tbody > tr > th {
+  font-weight: 400 !important;
+  color: var(--ef-fg-muted) !important;
+  display: table-cell !important;
+}
+
+/* Фікс вирівнювання іконок та тексту у рядках */
+.table th > .glyphicon,
+.table td > .glyphicon,
+.table th > span[class*="glyphicon-"],
+.table td > span[class*="glyphicon-"] {
+  display: inline-block !important;
+  vertical-align: middle !important;
+  position: relative !important;
+  top: -1px !important; /* Оптичний мікро-зсув вгору під базову лінію */
+  margin-right: 8px !important; /* Відступ від хмаринки до тексту */
 }
 
 /* ---------- Випадаючі меню та автокомпліт ---------- */
@@ -184,7 +208,7 @@ td span, td code, .text-monospace, .text-right {
   color: var(--ef-green) !important;
 }
 .text-danger, .text-warning, .text-info {
-  color: var(--ef-red) !important; /* Наш фікс для "Від'єднано" */
+  color: var(--ef-red) !important;
 }
 .table a, td a {
   color: var(--ef-blue) !important;
@@ -193,16 +217,14 @@ td span, td code, .text-monospace, .text-right {
   fill: var(--ef-fg-muted) !important;
 }
 
-/* ---------- Кастомізація іконок антени (reception) ---------- */
+/* ---------- Кастомізація іконок антена (reception) ---------- */
 .reception {
   -webkit-mask-repeat: no-repeat !important;
   mask-repeat: no-repeat !important;
   -webkit-mask-position: center !important;
   mask-position: center !important;
-
-  background-image: none !important; /* Повністю вбиваємо рідний чорний колір */
-  background-color: var(--ef-fg-muted) !important; /* Задаємо твій колір #9ca3af */
-
+  background-image: none !important;
+  background-color: var(--ef-fg-muted) !important;
   display: inline-block;
   width: 14px;
   height: 14px;
@@ -210,26 +232,11 @@ td span, td code, .text-monospace, .text-right {
 }
 
 /* Трафарети масок для рівнів сигналу */
-.reception-0 {
-  -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-0.svg) !important;
-  mask-image: url(../../vendor/bootstrap/fonts/reception-0.svg) !important;
-}
-.reception-1 {
-  -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-1.svg) !important;
-  mask-image: url(../../vendor/bootstrap/fonts/reception-1.svg) !important;
-}
-.reception-2 {
-  -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-2.svg) !important;
-  mask-image: url(../../vendor/bootstrap/fonts/reception-2.svg) !important;
-}
-.reception-3 {
-  -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-3.svg) !important;
-  mask-image: url(../../vendor/bootstrap/fonts/reception-3.svg) !important;
-}
-.reception-4 {
-  -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-4.svg) !important;
-  mask-image: url(../../vendor/bootstrap/fonts/reception-4.svg) !important;
-}
+.reception-0 { -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-0.svg) !important; mask-image: url(../../vendor/bootstrap/fonts/reception-0.svg) !important; }
+.reception-1 { -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-1.svg) !important; mask-image: url(../../vendor/bootstrap/fonts/reception-1.svg) !important; }
+.reception-2 { -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-2.svg) !important; mask-image: url(../../vendor/bootstrap/fonts/reception-2.svg) !important; }
+.reception-3 { -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-3.svg) !important; mask-image: url(../../vendor/bootstrap/fonts/reception-3.svg) !important; }
+.reception-4 { -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-4.svg) !important; mask-image: url(../../vendor/bootstrap/fonts/reception-4.svg) !important; }
 
 /* ---------- Модальні вікна та Налаштування ---------- */
 .modal-content {
