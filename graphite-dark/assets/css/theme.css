@@ -1,0 +1,332 @@
+/* ---------- Основна палітра (Graphite Dark) ---------- */
+:root {
+  --ef-bg0: #1b1c1e;      /* М'який темно-сірий фон всієї сторінки */
+  --ef-bg1: #212326;      /* Колір карток та панелей */
+  --ef-bg2: #1b1c1e;      /* Навбар */
+  --ef-bg3: #2a2d32;      /* Поля введення та рядки, що чергуються */
+  --ef-bg4: #32363c;      /* Чіткі сірі межі для розділення елементів */
+  --ef-bg5: #212326;      /* Випадаючі меню */
+
+  --ef-fg: #ffffff;        /* Чистий білий для важливих назв */
+  --ef-fg-muted: #9ca3af;  /* Спокійний сірий для шляхів та підписів */
+
+  /* Акценти */
+  --ef-blue:   #60a5fa;    /* Спокійний синій для ID пристроїв та посилань */
+  --ef-green:  #10b981;    /* М'який зелений для стану "В актуальному стані" */
+  --ef-red:    #ef4444;    /* Червоний для помилок/відключень */
+
+  --ef-aqua:   #3b82f6;
+  --ef-orange: #d97706;
+  --ef-yellow: #f59e0b;
+
+  --ef-link:   #3b82f6;
+  --ef-link-h: #60a5fa;
+  --ef-focus:  #32363c;
+}
+
+/* ---------- Глобальні стилі ---------- */
+html, body {
+  background: var(--ef-bg0) !important;
+  color: var(--ef-fg-muted) !important;
+  font-family: 'Open Sans', 'Segoe UI', sans-serif;
+}
+a, .btn-link {
+  color: var(--ef-link) !important;
+}
+a:hover, a:focus, .btn-link:hover, .btn-link:focus {
+  color: var(--ef-link-h) !important;
+  text-decoration: none;
+}
+hr {
+  border-color: var(--ef-bg4) !important;
+}
+h1, h2, h3, h4 {
+  color: var(--ef-fg) !important;
+  font-weight: 400 !important;
+}
+
+/* ---------- Панель навігації (Navbar) ---------- */
+.navbar, .navbar-inverse, .navbar-default {
+  background: var(--ef-bg2) !important;
+  border-bottom: 1px solid var(--ef-bg4) !important;
+  border-width: 0 0 1px 0 !important;
+}
+.navbar .navbar-brand {
+  color: var(--ef-blue) !important;
+  font-weight: 600;
+}
+.navbar a, .navbar .navbar-text {
+  color: var(--ef-fg-muted) !important;
+}
+.open>.dropdown-toggle, .dropdown-toggle:hover, li.hidden-xs:hover {
+  background-color: var(--ef-bg3) !important;
+}
+
+/* ---------- Панелі / Картки ---------- */
+.panel, .panel-default, .panel-info, .panel-primary,
+.panel-success, .panel-danger, .panel-warning {
+  background: var(--ef-bg1) !important;
+  border: 1px solid var(--ef-bg4) !important;
+  border-radius: 8px !important;
+  color: var(--ef-fg-muted) !important;
+  margin-bottom: 15px !important;
+  box-shadow: none !important;
+}
+.panel-heading {
+  background: var(--ef-bg1) !important;
+  border-bottom: 1px solid var(--ef-bg4) !important;
+  color: var(--ef-fg) !important;
+}
+.panel-title {
+  color: var(--ef-fg) !important;
+  font-size: 16px;
+}
+.panel-footer {
+  background-color: var(--ef-bg1) !important;
+  border-top: 1px solid var(--ef-bg4) !important;
+}
+.panel-group .panel-heading+.panel-collapse>.panel-body {
+  border-top: 1px solid var(--ef-bg4) !important;
+  background-color: var(--ef-bg1) !important;
+}
+.panel-icon {
+  color: var(--ef-fg-muted) !important;
+}
+
+/* ---------- Таблиці ---------- */
+.table {
+  background: transparent !important;
+  color: var(--ef-fg-muted) !important;
+  margin-bottom: 0 !important;
+}
+.table > tbody > tr > td {
+  border-top: 1px solid var(--ef-bg4) !important;
+  padding: 8px 12px !important;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: var(--ef-bg3) !important;
+}
+/* Права колонка зі значеннями — робимо яскравішою */
+.table > tbody > tr > td:last-child,
+td span, td code, .text-monospace, .text-right {
+  color: var(--ef-fg) !important;
+  background-color: transparent !important;
+  border: none !important;
+}
+
+/* ---------- Випадаючі меню та автокомпліт ---------- */
+.dropdown-menu, .typeahead, .ui-autocomplete {
+  border: 1px solid var(--ef-bg4) !important;
+  border-radius: 8px !important;
+  background-color: var(--ef-bg5) !important;
+  padding: 4px 0 !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5) !important;
+}
+.dropdown-menu > li > a,
+.dropdown-menu > li > span,
+.typeahead > li > a,
+.ui-menu-item > a {
+  color: var(--ef-fg-muted) !important;
+  background: transparent !important;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus,
+.typeahead > li > a:hover,
+.typeahead > .active > a,
+.ui-menu-item > a:hover,
+.ui-state-focus {
+  color: var(--ef-fg) !important;
+  background-color: var(--ef-bg3) !important;
+}
+.divider {
+  height: 1px !important;
+  background-color: var(--ef-bg4) !important;
+  margin: 4px 0 !important;
+}
+.alert-info {
+  border: none;
+}
+
+/* ---------- Кнопки ---------- */
+.btn {
+  border-radius: 6px !important;
+}
+.btn-default {
+  background: var(--ef-bg3) !important;
+  color: var(--ef-fg-muted) !important;
+  border: 1px solid var(--ef-bg4) !important;
+}
+.btn-default:hover, .btn-default:focus {
+  background: var(--ef-bg4) !important;
+  color: var(--ef-fg) !important;
+  border-color: var(--ef-bg4) !important;
+}
+.btn-primary, .btn-success, .btn-info {
+  background: var(--ef-blue) !important;
+  color: #ffffff !important;
+  border: 1px solid transparent !important;
+}
+.btn-danger {
+  background: var(--ef-red) !important;
+  color: #ffffff !important;
+  border: 1px solid transparent !important;
+}
+.btn-warning {
+  background: var(--ef-red) !important;
+  border: 1px solid transparent !important;
+}
+
+/* ---------- Статуси та іконки ---------- */
+.text-success {
+  color: var(--ef-green) !important;
+}
+.text-danger, .text-warning, .text-info {
+  color: var(--ef-red) !important; /* Наш фікс для "Від'єднано" */
+}
+.table a, td a {
+  color: var(--ef-blue) !important;
+}
+.identicon>rect {
+  fill: var(--ef-fg-muted) !important;
+}
+
+/* ---------- Кастомізація іконок антени (reception) ---------- */
+.reception {
+  -webkit-mask-repeat: no-repeat !important;
+  mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
+  mask-position: center !important;
+
+  background-image: none !important; /* Повністю вбиваємо рідний чорний колір */
+  background-color: var(--ef-fg-muted) !important; /* Задаємо твій колір #9ca3af */
+
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+
+/* Трафарети масок для рівнів сигналу */
+.reception-0 {
+  -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-0.svg) !important;
+  mask-image: url(../../vendor/bootstrap/fonts/reception-0.svg) !important;
+}
+.reception-1 {
+  -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-1.svg) !important;
+  mask-image: url(../../vendor/bootstrap/fonts/reception-1.svg) !important;
+}
+.reception-2 {
+  -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-2.svg) !important;
+  mask-image: url(../../vendor/bootstrap/fonts/reception-2.svg) !important;
+}
+.reception-3 {
+  -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-3.svg) !important;
+  mask-image: url(../../vendor/bootstrap/fonts/reception-3.svg) !important;
+}
+.reception-4 {
+  -webkit-mask-image: url(../../vendor/bootstrap/fonts/reception-4.svg) !important;
+  mask-image: url(../../vendor/bootstrap/fonts/reception-4.svg) !important;
+}
+
+/* ---------- Модальні вікна та Налаштування ---------- */
+.modal-content {
+  background-color: var(--ef-bg1) !important;
+  border: 1px solid var(--ef-bg4) !important;
+  border-radius: 8px !important;
+  color: var(--ef-fg-muted) !important;
+}
+.modal-header {
+  background-color: var(--ef-bg1) !important;
+  border-bottom: 1px solid var(--ef-bg4) !important;
+  color: var(--ef-fg) !important;
+}
+.modal-footer {
+  background-color: var(--ef-bg1) !important;
+  border-top: 1px solid var(--ef-bg4) !important;
+}
+
+.nav-tabs {
+  border-bottom: 1px solid var(--ef-bg4) !important;
+}
+.nav-tabs > li > a {
+  color: var(--ef-fg-muted) !important;
+  border: 1px solid transparent !important;
+  border-radius: 6px 6px 0 0 !important;
+}
+.nav-tabs > li > a:hover {
+  background-color: var(--ef-bg3) !important;
+  border-color: var(--ef-bg4) var(--ef-bg4) transparent !important;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  background-color: var(--ef-bg3) !important;
+  color: var(--ef-fg) !important;
+  border: 1px solid var(--ef-bg4) !important;
+  border-bottom-color: var(--ef-bg3) !important;
+}
+
+/* ---------- Елементи форм та поля введення ---------- */
+.form-control, input, textarea {
+  color: var(--ef-fg) !important;
+  border: 1px solid var(--ef-bg4) !important;
+  background-color: var(--ef-bg0) !important;
+  border-radius: 6px !important;
+}
+.form-control:focus {
+  border-color: var(--ef-blue) !important;
+  box-shadow: none !important;
+}
+
+/* Кастомізація випадаючих списків (select) */
+select.form-control {
+  color: var(--ef-fg) !important;
+  border: 1px solid var(--ef-bg4) !important;
+  background-color: var(--ef-bg0) !important;
+  border-radius: 6px !important;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+select.form-control:hover,
+select.form-control:focus {
+  border-color: var(--ef-blue) !important;
+  background-color: var(--ef-bg3) !important;
+  outline: none !important;
+}
+select.form-control option {
+  background-color: var(--ef-bg5) !important;
+  color: var(--ef-fg-muted) !important;
+  padding: 8px !important;
+}
+select.form-control option:hover,
+select.form-control option:focus,
+select.form-control option:active,
+select.form-control option:checked {
+  background-color: var(--ef-bg3) !important;
+}
+
+/* Блоки з текстом (Readonly / Wells) */
+.well, .form-control[readonly="readonly"] {
+  color: var(--ef-fg-muted) !important;
+  border-color: var(--ef-bg4) !important;
+  background-color: var(--ef-bg3) !important;
+}
+code.ng-binding, .well code {
+  color: var(--ef-fg) !important;
+  background-color: var(--ef-bg0) !important;
+  border: 1px solid var(--ef-bg4) !important;
+}
+.help-block {
+  color: var(--ef-fg-muted) !important;
+}
+.input-group-addon {
+  background-color: var(--ef-bg2) !important;
+  border-color: var(--ef-bg4) !important;
+  color: var(--ef-fg) !important;
+  border-radius: 6px !important;
+}
