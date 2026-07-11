@@ -116,7 +116,6 @@ h1, h2, h3, h4 {
 td span, td code, .text-monospace, .text-right {
   color: var(--ef-fg) !important;
   background-color: transparent !important;
-  border: none !important;
 }
 
 /* Точний фікс для лівої колонки з назвами (th) */
@@ -136,6 +135,7 @@ td span, td code, .text-monospace, .text-right {
   position: relative !important;
   top: -1px !important; /* Оптичний мікро-зсув вгору під базову лінію */
   margin-right: 8px !important; /* Відступ від хмаринки до тексту */
+  border: none !important;
 }
 
 /* ---------- Випадаючі меню та автокомпліт ---------- */
